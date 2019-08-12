@@ -9,7 +9,10 @@ public class CallableDemo implements Callable<String> {
 
         CallableDemo callableDemo = new CallableDemo();
 
+
         Future<String> future = executorService.submit(callableDemo);
+
+        // 会产生阻塞
         String s = future.get();
 
         System.out.println(s);
